@@ -1,3 +1,7 @@
+/*
+- Problem: https://leetcode.com/problems/valid-palindrome/
+*/
+
 func isPalindrome(s string) bool {
     var i int = 0
     var j int = len(s) - 1
