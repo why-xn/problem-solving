@@ -1,3 +1,7 @@
+/*
+- Problem: https://leetcode.com/problems/trapping-rain-water/
+*/
+
 func trap(height []int) int {
     var maxL int = 0
     var maxR int = height[len(height)-1]
