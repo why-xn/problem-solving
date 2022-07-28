@@ -1,3 +1,7 @@
+/*
+- Problem: https://leetcode.com/problems/3sum/submissions/
+*/
+
 func threeSum(nums []int) [][]int {
     
     var hset map[string]*byte = map[string]*byte{}
