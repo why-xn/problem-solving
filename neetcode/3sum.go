@@ -1,5 +1,5 @@
 /*
-- Problem: https://leetcode.com/problems/3sum/submissions/
+- Problem: https://leetcode.com/problems/3sum/
 */
 
 func threeSum(nums []int) [][]int {
