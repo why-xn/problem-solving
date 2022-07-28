@@ -1,3 +1,7 @@
+/*
+- Problem: https://leetcode.com/problems/longest-consecutive-sequence/
+*/
+
 func longestConsecutive(nums []int) int {
     var nset map[int]*byte = map[int]*byte{}
     
