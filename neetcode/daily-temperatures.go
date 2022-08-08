@@ -13,7 +13,7 @@ func dailyTemperatures(temperatures []int) []int {
     
     for i := 1; i < len(temperatures); i++ {
         if slen > 0 && temperatures[i] > temperatures[iStack[slen - 1]] {
-            // if a warmer temperature is found that the top of the stack then pop all the cooler temperatures and calculate their results
+            // if a warmer temperature is found than the top of the stack then pop all the cooler temperatures and calculate their results
             for slen > 0 {
                 if temperatures[i] <= temperatures[iStack[slen - 1]] {
                     break
