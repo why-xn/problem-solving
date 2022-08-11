@@ -13,18 +13,10 @@
 func middleNode(head *ListNode) *ListNode {
     
     secondPointer := head
-    var i int = 0
     
-    for secondPointer.Next != nil {
-        i = 0
-      
+    for secondPointer != nil && secondPointer.Next != nil {
         // Increasing Second Pointer upto 2 times in each iteration. When the Second Pointer will reach the last node, The head pointer will be in the middle.
-        for i < 2 {
-            if secondPointer.Next != nil {
-                secondPointer = secondPointer.Next
-            }
-            i++
-        }
+        secondPointer = secondPointer.Next.Next
         head = head.Next
     }
     
