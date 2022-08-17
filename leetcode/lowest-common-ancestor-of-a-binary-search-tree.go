@@ -17,8 +17,8 @@ type HashSet struct {
 
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 
-	var ancestorSetOfP HashSet = HashSet{set: map[int]*byte{}}    // For storing ancestors of P in bottom up order
-	var ancestorSetOfQ HashSet = HashSet{set: map[int]*byte{}}    // For storing ancestors of Q in bottom up order
+	var ancestorSetOfP HashSet = HashSet{set: map[int]*byte{}}    // For storing ancestors of P in bottom up approach
+	var ancestorSetOfQ HashSet = HashSet{set: map[int]*byte{}}    // For storing ancestors of Q in bottom up approach
 	var lca TreeNode = TreeNode{
 		Val:   -1000000001,
 		Right: nil,
