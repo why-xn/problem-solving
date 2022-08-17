@@ -24,10 +24,10 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 		Right: nil,
 		Left:  nil,
 	}
-	
-  dfs(root, p, q, &ancestorSetOfP, &ancestorSetOfQ, &lca)
+
+	dfs(root, p, q, &ancestorSetOfP, &ancestorSetOfQ, &lca)
 	return &lca
-  
+
 }
 
 func dfs(node, p, q *TreeNode, ancestorSetOfP *HashSet, ancestorSetOfQ *HashSet, lca *TreeNode) {
@@ -40,18 +40,18 @@ func dfs(node, p, q *TreeNode, ancestorSetOfP *HashSet, ancestorSetOfQ *HashSet,
 		if lca.Val == -1000000001 {
 			dfs(node.Left, p, q, ancestorSetOfP, ancestorSetOfQ, lca)
 			checkIfAncestorOfBoth(node, ancestorSetOfP, ancestorSetOfQ, lca)
-			
-      dfs(node.Right, p, q, ancestorSetOfP, ancestorSetOfQ, lca)
+
+			dfs(node.Right, p, q, ancestorSetOfP, ancestorSetOfQ, lca)
 			checkIfAncestorOfBoth(node, ancestorSetOfP, ancestorSetOfQ, lca)
 		}
 	}
 }
 
 func checkIfAncestorOfBoth(node *TreeNode, ancestorSetOfP *HashSet, ancestorSetOfQ *HashSet, lca *TreeNode) {
-  isAncestorOfP := isAncestor(node, ancestorSetOfP)
+	isAncestorOfP := isAncestor(node, ancestorSetOfP)
 	isAncestorOfQ := isAncestor(node, ancestorSetOfQ)
 
-  // If the node is ancestor of both P and Q, then this is the Lowest Common Ancestor.
+	// If the node is ancestor of both P and Q, then this is the Lowest Common Ancestor.
 	if isAncestorOfP && isAncestorOfQ {
 		if lca.Val == -1000000001 {
 			*lca = *node
@@ -60,23 +60,23 @@ func checkIfAncestorOfBoth(node *TreeNode, ancestorSetOfP *HashSet, ancestorSetO
 }
 
 func isAncestor(node *TreeNode, ancestorSet *HashSet) bool {
-  isAncestor := false
-	
-  // checking if left child is an ancestor. If so, this node is also an ancestor
-  if node.Left != nil {
+	isAncestor := false
+
+	// checking if left child is an ancestor. If so, this node is also an ancestor
+	if node.Left != nil {
 		if _, exists := ancestorSet.set[node.Left.Val]; exists {
 			isAncestor = true
 		}
 	}
-  
-  // checking if right child is an ancestor. If so, this node is also an ancestor
+
+	// checking if right child is an ancestor. If so, this node is also an ancestor
 	if !isAncestor && node.Right != nil {
 		if _, exists := ancestorSet.set[node.Right.Val]; exists {
 			isAncestor = true
 		}
 	}
-  
-  // checking if this node is already in ancestor.
+
+	// checking if this node is already in ancestor.
 	if !isAncestor {
 		if _, exists := ancestorSet.set[node.Val]; exists {
 			isAncestor = true
@@ -88,6 +88,6 @@ func isAncestor(node *TreeNode, ancestorSet *HashSet) bool {
 			ancestorSet.set[node.Val] = nil
 		}
 	}
-    
-  return isAncestor
+
+	return isAncestor
 }
