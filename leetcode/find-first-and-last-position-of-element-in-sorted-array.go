@@ -44,18 +44,14 @@ func binarySearch(curr int, min int, max int, nums []int, target int) int {
     } else if target < nums[curr] {
         if curr - min == 0 {
             return -1
-        } else if curr - min == 1 {
-            return binarySearch(min, min, curr - 1, nums, target)
         } else {
             return binarySearch(((curr + min)/2), min, curr - 1, nums, target)
         }
     } else if target > nums[curr] {
         if max - curr == 0 {
             return -1
-        } else if max - curr == 1 {
-            return binarySearch(max, curr + 1, max, nums, target)
         } else {
-            return binarySearch(((curr + max)/2), curr + 1, max, nums, target)
+            return binarySearch(((curr + max)/2) + 1, curr + 1, max, nums, target)
         }
     }
     return -1
