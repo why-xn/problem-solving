@@ -2,6 +2,8 @@
 - Problem: https://leetcode.com/problems/search-in-rotated-sorted-array/
 */
 
+// Binary Search
+
 func search(nums []int, target int) int {
     f := nums[0]
     ri := 0
